@@ -1,0 +1,339 @@
+<html>
+<head>
+<title>Timolol</title>
+
+
+<style>
+
+a {color: FFFFFF; text-decoration: none;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana;}
+a:visited {color: FFFFFF; text-decoration: none;}
+a:hover {color: 21CDFF; text-decoration: none; cursor: pointer;}
+a:active {color: 00FF00; text-decoration: none;}
+body {color: FFFFFF; font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana;}
+p {color: FFFFFF}
+
+</style>
+
+
+<!-- PRELOADING IMAGES SCRIPT -->
+
+<script>
+<!--
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+
+<!-- DICTIONARY.COM FORM -->
+
+<script>
+
+<!-- Begin
+function jump2form() {
+  document.dict_form.term.select();
+  document.dict_form.term.focus();
+}
+function isblank(s)
+{
+  for(var i = 0; i < s.length; i++) {
+    var c = s.charAt(i);
+    if ((c != ' ') && (c != '\n') && (c != '\t')) return false;
+  }
+  return true;
+}
+function formcheck() {
+  var d = document.dict_form.db[1].checked;
+  var e = document.dict_form.term.value;
+  if ((e == null) || (e == "") || isblank(e)) {
+    alert("Please enter a word to look up.");
+    jump2form();
+  }
+  else if (d == 1) {
+    location.href = ("http://thesaurus.com/browse/" + escape(e));
+  }
+  else {
+    location.href = ("http://dictionary.reference.com/browse/" + escape(e));
+  }
+  return false;
+}
+function ahdpop() {
+win=window.open("http://www.dictionary.com/help/ahd3key.html",'AHDKey','width=500,height=330,toolbar=no,location=no,directories=no,menubar=no,scrollbars=yes,resizable=yes');
+  return false;
+}
+//  End -->
+</script>
+
+
+<!-- EXPANDABLE LINKS -->
+
+<script>
+function toggle(o) {
+var e = document.getElementById(o);
+e.style.display = e.style.display == 'block' ? 'none' : 'block';
+}
+onload = function() {
+var e, i=0;
+while(e = document.getElementById(['list1', 'list2', 'list3'][i++])) {
+e.style.display = 'none';
+}
+}
+</script>
+
+
+</head>
+
+
+<!-- BODY STARTS HERE -->
+
+<body style="background-color:#000000" onLoad="MM_preloadImages('rollover2.gif')">
+<table width="99%" border="0" align="center" style="background-color:#000000">
+
+
+<!-- HEADING -->
+
+  <tr align="center" style="background-color:#000000"> 
+    <td height="61" colspan="5"><img src="heading.jpg" alt="Heading" width="180" height="53"><br><br></td>
+  </tr> 
+
+
+<!-- IS250 & FORMS TABLE CELL -->
+
+  <tr>
+    <td width="45%" align="center" valign="top" style="background-image: url(bg.bmp); background-repeat: repeat-x; background-color:#000911">
+      <p><br><br><br>
+      <img src="IS250.jpg" alt="Lexus IS250" name="IS250" width="570" height="350" align="middle" id="IS250">
+      </p><br><br>
+
+
+<!-- GOOGLE FORM -->
+
+      <form method="get" action="http://www.google.com.au/search">
+        <input name="q" type="text" id="q" value="" size="59" maxlength="2048">
+        <input name="sa" type="submit" id="sa" value=" Google ">
+        <font size=-1> 
+        <input type="hidden" name="domains" value="http://forums.whirlpool.net.au/">
+        <br>
+        <input type="radio" name="sitesearch" value="" checked>
+        Search Google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="sitesearch" value="http://forums.whirlpool.net.au/">
+        Search Whirlpool
+        </font> 
+      </form>
+     <br>
+
+
+<!-- DICTIONARY.COM FORM -->
+
+      <form name="dict_form" method="get" action="/cgi-bin/dict.pl" onsubmit="return formcheck();">
+        <input type="text" name="term" size=52 maxlength=50 value=""> 
+        <input type="submit" value="Dictionary.com">
+        <br>
+        <font size=-1>
+        <input type="radio" name="db" value="*" checked>
+        Dictionary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="db" value="roget">
+        Thesaurus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </font>
+      </form>
+     <br>
+
+
+<!-- WIKIPEDIA FORM -->
+
+      <form method="get" action="http://www.wikipedia.org/search-redirect.php">
+      <input type="hidden" name="language" value="en" />
+      <input type="text" name="search" size="57" />
+      <input type="submit" name="go" value="Wikipedia" />
+      </form>
+    </td>
+
+
+    <td width="1%" valign="top" style="background-color:#000000">&nbsp;</td>
+
+
+<!-- LINKS TABLE CELL -->
+
+    <td width="6%" height="715" valign="top" style="background-image: url(bg.bmp); background-repeat: repeat-x; background-color:#000911">
+      <br><br>
+        <span align="left">
+        <p><font size="-1">
+
+          &nbsp;<a href="https://www.amazon.com.au/">Amazon Australia</a><br>
+          &nbsp;<a href="https://auspost.com.au/auth/login">Australia Post MyPost</a><br>
+          &nbsp;<a href="https://ibanking.bankofmelbourne.com.au/ibank/loginPage.action">Bank of Melbourne</a><br>
+          &nbsp;<a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml">BoM</a><br>
+          &nbsp;<a href="https://www.carexpert.com.au/">Car Expert</a><br>
+          &nbsp;<a href="https://www.cashrewards.com.au/">Cashrewards</a><br>
+          &nbsp;<a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx">CommSec</a><br>
+          <span>
+           &nbsp;<a href="" onclick="toggle('list1'); return false;">Computer Drivers &gt;</a><br>
+           <span id="list1" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.amd.com/en/support/chipsets/amd-socket-am4/b550">- AMD Chipset</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.nvidia.com/en-us/geforce/drivers/">- Graphics </a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.msi.com/Motherboard/MPG-B550-GAMING-EDGE-WIFI/support">- MSI Motherboard</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://community.ui.com/releases">- Unifi Releases</a><br>
+           </span>
+          </span>
+          &nbsp;<a href="https://www.espn.com.au/f1/">ESPN F1</a><br>
+          &nbsp;<a href="https://www.facebook.com/home.php">Facebook</a><br>
+          &nbsp;<a href="https://www.formula1.com/">Formula1.com</a><br>
+          &nbsp;<a href="https://watch.foxtel.com.au/app/#/live/sps">Foxtel</a><br>
+          &nbsp;<a href="https://www.google.com.au/maps">Google Maps</a><br>
+          &nbsp;<a href="https://outlook.live.com/">Hotmail</a><br>
+          &nbsp;<a href="https://ib.nab.com.au/nabib/index.jsp">NAB</a><br>
+          &nbsp;<a href="https://onedrive.live.com/">OneDrive</a><br>
+          &nbsp;<a href="https://www.optus.com.au/my-account/">Optus My Account</a><br>
+          &nbsp;<a href="https://www.ozbargain.com.au/">OzBargain</a><br>
+          &nbsp;<a href="https://petrolspy.com.au/map/latlng/-37.7887285/145.123583">Petrol Spy</a><br>
+          &nbsp;<a href="https://members.superloop.com/">Superloop Login</a><br>
+          &nbsp;<a href="https://www.theage.com.au/">The Age</a><br>
+          &nbsp;<a href="https://unifi.ubnt.com/">Unifi Cloud Access</a><br>
+          &nbsp;<a href="https://192.168.1.2:8443/">Unifi Controller (LAN)</a><br>
+          &nbsp;<a href="https://vip.ventraip.com.au/my-services/hosting">VentraIP</a><br>
+          &nbsp;<a href="https://web.whatsapp.com/">Whatsapp Web</a><br>
+          &nbsp;<a href="https://forums.whirlpool.net.au/">Whirlpool Forums</a><br>
+          &nbsp;<a href="https://www.youtube.com/">YouTube</a><br>
+           <hr />
+          <span>
+           &nbsp;<a href="" onclick="toggle('list2'); return false;">Anaesthesia &gt;</a><br>
+           <span id="list2" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://cpd.anzca.edu.au/">- ANZCA CPD</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.anzca.edu.au/">- ANZCA Home</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://tps.anzca.edu.au/">- ANZCA TPS</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs">- Clinical Key (AMH)</a><br>
+           </span>
+          </span>
+          <span>
+           &nbsp;<a href="" onclick="toggle('list3'); return false;">RMH Anaesthesia &gt;</a><br>
+           <span id="list3" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.anaesthetic-reference.com.au/">- Anaes Reference</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://epicprod.mh.org.au/">- EPIC EMR (LAN)</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://intranet.mh.org.au/w2/i2">- Intranet (LAN)</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://remotedocs.mh.org.au/">- Remote Access</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.rmhcme.org/userlogin.aspx">- RMH CME</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://owa.ssg.org.au/owa">- RMH Email</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://timfazio.com/med/">- Tim Fazio</a><br>
+           </span>
+          </span>
+
+          </font>
+         </p>
+         </span>
+        <p>
+        <a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Rollover','','rollover2.gif',1)"><img src="rollover1.jpg" alt="Lexus" name="Rollover" width="170" height="76" border="0"></a></p><br>
+    </td>
+
+
+    <td width="1%" valign="top" style="background-color:#000000">&nbsp;</td>
+
+
+<!-- CLOCK & NURBURGRING WEBCAM TABLE CELL -->
+
+    <td width="46%" valign="top" style="background-image: url(bg.bmp); background-repeat: repeat-x" bgcolor="#000911">
+     <br><br><br>
+
+
+<!-- CLOCK SCRIPT -->
+
+      <div id="Clock" align="center" style="font-size: 14; color:#FFFFFF"> 
+      </div>
+      <script>
+<!--
+function tick() {
+  var hours, minutes, seconds, ap;
+  var intHours, intMinutes, intSeconds;
+  var today;
+  var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+  var monNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+  today = new Date();
+
+  intHours = today.getHours();
+  intMinutes = today.getMinutes();
+  intSeconds = today.getSeconds();
+
+  if (intHours == 0) {
+     hours = "12:";
+     ap = "AM";
+  } else if (intHours < 12) { 
+     hours = intHours+":";
+     ap = "AM";
+  } else if (intHours == 12) {
+     hours = "12:";
+     ap = "PM";
+  } else {
+     intHours = intHours - 12
+     hours = intHours + ":";
+     ap = "PM";
+  }
+
+  if (intMinutes < 10) {
+     minutes = "0"+intMinutes+":";
+  } else {
+     minutes = intMinutes+":";
+  }
+
+  if (intSeconds < 10) {
+     seconds = "0"+intSeconds+" ";
+  } else {
+     seconds = intSeconds+" ";
+  }
+
+  day = " - "+dayNames[today.getDay()];
+  month = " "+monNames[today.getMonth()];
+  date = " "+today.getDate();
+  year = ", "+today.getFullYear();
+
+  timeString = hours+minutes+seconds+ap+day+month+date+year;
+
+  Clock.innerHTML = timeString;
+
+  window.setTimeout("tick();", 100);
+}
+
+window.onload = tick;
+//-->
+      </script>
+     <br><br><br>
+
+
+<!-- TO DO LIST FRAME -->
+
+     <center>
+      <iframe name="conFrame" width="600" height="500" frameborder="0" allowtransparency="true" src="frame.htm"></iframe>
+     </center>
+
+    </td>
+  </tr>
+</table>
+
+
+<p style="text-align:center; text-align:center; color:#000000">79224878</p>
+
+
+</body>
+
+
+</html>
