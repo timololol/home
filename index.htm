@@ -95,7 +95,7 @@ e.style.display = e.style.display == 'block' ? 'none' : 'block';
 }
 onload = function() {
 var e, i=0;
-while(e = document.getElementById(['list1', 'list2', 'list3'][i++])) {
+while(e = document.getElementById(['list1', 'list2', 'list3', 'list4', 'list5'][i++])) {
 e.style.display = 'none';
 }
 }
@@ -129,7 +129,7 @@ e.style.display = 'none';
 
 <!-- GOOGLE FORM -->
 
-      <form method="get" action="http://www.google.com.au/search">
+      <form method="get" action="https://www.google.com.au/search">
         <input name="q" type="text" id="q" value="" size="59" maxlength="2048">
         <input name="sa" type="submit" id="sa" value=" Google ">
         <font size=-1> 
@@ -141,32 +141,8 @@ e.style.display = 'none';
         Search Whirlpool
         </font> 
       </form>
-     <br>
 
 
-<!-- DICTIONARY.COM FORM -->
-
-      <form name="dict_form" method="get" action="/cgi-bin/dict.pl" onsubmit="return formcheck();">
-        <input type="text" name="term" size=52 maxlength=50 value=""> 
-        <input type="submit" value="Dictionary.com">
-        <br>
-        <font size=-1>
-        <input type="radio" name="db" value="*" checked>
-        Dictionary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="db" value="roget">
-        Thesaurus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </font>
-      </form>
-     <br>
-
-
-<!-- WIKIPEDIA FORM -->
-
-      <form method="get" action="http://www.wikipedia.org/search-redirect.php">
-      <input type="hidden" name="language" value="en" />
-      <input type="text" name="search" size="57" />
-      <input type="submit" name="go" value="Wikipedia" />
-      </form>
     </td>
 
 
@@ -180,56 +156,18 @@ e.style.display = 'none';
         <span align="left">
         <p><font size="-1">
 
-          &nbsp;<a href="https://www.amazon.com.au/">Amazon Australia</a><br>
-          &nbsp;<a href="https://login.anz.com/internetbanking">ANZ Internet Banking</a><br>
-          &nbsp;<a href="https://auspost.com.au/auth/login">Australia Post MyPost</a><br>
-          &nbsp;<a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml">BoM</a><br>
-          &nbsp;<a href="https://www.carexpert.com.au/">Car Expert</a><br>
-          &nbsp;<a href="https://www.cashrewards.com.au/">Cashrewards</a><br>
-          &nbsp;<a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx">CommSec</a><br>
           <span>
-           &nbsp;<a href="" onclick="toggle('list1'); return false;">Computer Drivers &gt;</a><br>
+           &nbsp;<a href="" onclick="toggle('list1'); return false;">Anaesthesia &gt;</a><br>
            <span id="list1" style="display: none;">
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.amd.com/en/support/chipsets/amd-socket-am5/b650">- AMD Chipset</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fanatec.com/eu-en/driver">- Fanatec Driver</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.nvidia.com/en-us/geforce/drivers/">- Graphics </a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://rog.asus.com/motherboards/rog-strix/rog-strix-b650e-i-gaming-wifi-model/helpdesk_download/">- Motherboard</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://community.ui.com/releases">- Unifi Releases</a><br>
-           </span>
-          </span>
-          &nbsp;<a href="https://www.espn.com.au/f1/">ESPN F1</a><br>
-          &nbsp;<a href="https://www.facebook.com/home.php">Facebook</a><br>
-          &nbsp;<a href="https://www.formula1.com/">Formula1.com</a><br>
-          &nbsp;<a href="https://watch.foxtel.com.au/app/#/live/sps">Foxtel</a><br>
-          &nbsp;<a href="https://www.google.com.au/maps">Google Maps</a><br>
-          &nbsp;<a href="https://outlook.live.com/">Hotmail</a><br>
-          &nbsp;<a href="https://securemaxxia.com.au/SecureMaxxia/Login.aspx">Maxxia Login</a><br>
-          &nbsp;<a href="https://ib.nab.com.au/nabib/index.jsp">NAB</a><br>
-          &nbsp;<a href="https://onedrive.live.com/">OneDrive</a><br>
-          &nbsp;<a href="https://www.optus.com.au/my-account/">Optus My Account</a><br>
-          &nbsp;<a href="https://www.ozbargain.com.au/">OzBargain</a><br>
-          &nbsp;<a href="https://petrolspy.com.au/map/latlng/-37.7887285/145.123583">Petrol Spy</a><br>
-          &nbsp;<a href="https://superhub.superloop.com/">Superloop Login</a><br>
-          &nbsp;<a href="https://www.theage.com.au/">The Age</a><br>
-          &nbsp;<a href="https://192.168.1.2:8443/">Unifi Controller (LAN)</a><br>
-          &nbsp;<a href="https://vip.ventraip.com.au/my-services/hosting">VentraIP</a><br>
-          &nbsp;<a href="https://web.whatsapp.com/">Whatsapp Web</a><br>
-          &nbsp;<a href="https://forums.whirlpool.net.au/">Whirlpool Forums</a><br>
-          &nbsp;<a href="https://www.youtube.com/">YouTube</a><br>
-           <hr />
-          <span>
-           &nbsp;<a href="" onclick="toggle('list2'); return false;">Anaesthesia &gt;</a><br>
-           <span id="list2" style="display: none;">
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://cpd.anzca.edu.au/">- ANZCA CPD</a><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.anzca.edu.au/">- ANZCA Home</a><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://tps.anzca.edu.au/">- ANZCA TPS</a><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs">- Clinical Key (AMH)</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mlu-portal.mdhs.unimelb.edu.au/">- Unimelb Portal</a><br>
            </span>
           </span>
           <span>
-           &nbsp;<a href="" onclick="toggle('list3'); return false;">RMH Anaesthesia &gt;</a><br>
-           <span id="list3" style="display: none;">
+           &nbsp;<a href="" onclick="toggle('list2'); return false;">RMH Anaesthesia &gt;</a><br>
+           <span id="list2" style="display: none;">
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.anaesthetic-reference.com.au/">- Anaes Reference</a><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://epicprod.mh.org.au/">- EPIC EMR (LAN)</a><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://intranet.mh.org.au/w2/i2">- Intranet (LAN)</a><br>
@@ -239,19 +177,75 @@ e.style.display = 'none';
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://timfazio.com/med/">- Tim Fazio</a><br>
            </span>
           </span>
+          <span>
+           &nbsp;<a href="" onclick="toggle('list3'); return false;">Computer Drivers &gt;</a><br>
+           <span id="list3" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.amd.com/en/support/chipsets/amd-socket-am5/b650">- AMD Chipset</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fanatec.com/eu-en/driver">- Fanatec Driver</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.nvidia.com/en-us/geforce/drivers/">- Graphics </a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://rog.asus.com/motherboards/rog-strix/rog-strix-b650e-i-gaming-wifi-model/helpdesk_download/">- Motherboard</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://community.ui.com/releases">- Unifi Releases</a><br>
+           </span>
+          </span>
+          <span>
+           &nbsp;<a href="" onclick="toggle('list4'); return false;">Financial &gt;</a><br>
+           <span id="list4" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://login.anz.com/internetbanking">- ANZ</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://login.aware.com.au/">- Aware Super</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://ibanking.bankofmelbourne.com.au/ibank/loginPage.action">- Bank of Melbourne</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx">- CommSec</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://securemaxxia.com.au/SecureMaxxia/Login.aspx">- Maxxia Login</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://ib.nab.com.au/nabib/index.jsp">- NAB</a><br>
+           </span>
+          </span>
+          <span>
+           &nbsp;<a href="" onclick="toggle('list5'); return false;">Reddit &gt;</a><br>
+           <span id="list5" style="display: none;">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.reddit.com/">- Reddit Home</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.reddit.com/r/formula1/">- Formula 1</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.reddit.com/r/fujifilm.">- Fujifilm</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.reddit.com/r/granturismo/">- Gran Turismo</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.reddit.com/r/photography/">- Photography</a><br>
+           </span>
+          </span>
+          <hr> 
+          &nbsp;<a href="https://www.abc.net.au/news">ABC News</a><br>
+          &nbsp;<a href="https://www.amazon.com.au/">Amazon Australia</a><br>
+          &nbsp;<a href="https://auspost.com.au/auth/login">Australia Post MyPost</a><br>
+          &nbsp;<a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml">BoM Weather</a><br>
+          &nbsp;<a href="https://myaccount.boost.com.au/home">Boost Mobile Account</a><br>
+          &nbsp;<a href="https://www.carexpert.com.au/">Car Expert</a><br>
+          &nbsp;<a href="https://www.cashrewards.com.au/">Cashrewards</a><br>
+          &nbsp;<a href="https://www.disneyplus.com/en-gb/home">Disney&plus;</a><br>
+          &nbsp;<a href="https://www.espn.com.au/f1/">ESPN F1</a><br>
+          &nbsp;<a href="https://www.facebook.com/home.php">Facebook</a><br>
+          &nbsp;<a href="https://www.formula1.com/">Formula1.com</a><br>
+          &nbsp;<a href="https://watch.foxtel.com.au/app/#/live/sps">Foxtel</a><br>
+          &nbsp;<a href="https://www.google.com.au/maps">Google Maps</a><br>
+          &nbsp;<a href="https://outlook.live.com/">Hotmail</a><br>
+          &nbsp;<a href="https://www.netflix.com/au/">Netflix</a><br>
+          &nbsp;<a href="https://onedrive.live.com/">OneDrive</a><br>
+          &nbsp;<a href="https://www.ozbargain.com.au/">OzBargain</a><br>
+          &nbsp;<a href="https://petrolspy.com.au/map/latlng/-37.795/145.035">Petrol Spy</a><br>
+          &nbsp;<a href="https://192.168.1.1/">Unifi Controller (LAN)</a><br>
+          &nbsp;<a href="https://vip.ventraip.com.au/my-services/hosting">VentraIP</a><br>
+          &nbsp;<a href="https://web.whatsapp.com/">Whatsapp Web</a><br>
+          &nbsp;<a href="https://forums.whirlpool.net.au/">Whirlpool Forums</a><br>
+          &nbsp;<a href="https://www.youtube.com/">YouTube</a><br>
 
-          </font>
-         </p>
-         </span>
+         </font>
+        </p>
+        </span>
         <p>
-        <a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Rollover','','rollover2.gif',1)"><img src="rollover1.jpg" alt="Lexus" name="Rollover" width="170" height="76" border="0"></a></p><br>
+        <a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Rollover','','rollover2.gif',1)"><img src="rollover1.jpg" alt="Lexus" name="Rollover" width="170" height="76" border="0"></a>
+        </p><br>
     </td>
 
 
     <td width="1%" valign="top" style="background-color:#000000">&nbsp;</td>
 
 
-<!-- CLOCK & NURBURGRING WEBCAM TABLE CELL -->
+<!-- CLOCK & TO DO LIST TABLE CELL -->
 
     <td width="46%" valign="top" style="background-image: url(bg.bmp); background-repeat: repeat-x" bgcolor="#000911">
      <br><br><br>
