@@ -23,23 +23,23 @@
       .headerbar {background: #e7d6c3;color: #FFFFFF;border-bottom: 2px solid #AAAAAA;line-height: 30px;position: fixed;top: 0;left: 0;right: 0;z-index: 1000;}
       .spacer {font-size: 0.9em;padding: 8px 20px;color: #FFFFFF;float: left;line-height: 1.3;}
       .site-name {vertical-align: top;margin: 8px 10px;text-align: center;font-family:Poppins,sans-serif;color: #295176;font-size: 26px;font-weight: normal;line-height: 30px;}
-      .time {font-size: 0.9em;padding: 8px 8px;color: #635c5c;float: right;line-height: 1.3;}
-      #pageWrap {max-width: 1000px;margin: auto;padding: 35px 5px;}
+      .time {font-size: 0.9em;padding: 8px 8px;color: #635c5c;font-weight: 700;float: right;line-height: 1.3;}
+      #pageWrap {max-width: 1100px;margin: auto;padding: 12px 5px;}
       /* Responsive code below */
-      .left {float: left;width: 40%; text-align: center;padding: 14px 8px;}
-      .main {float: left;width: 60%; padding: 0px 0px 20px 40px;}
+      .left {float: left;width: 40%; text-align: center;padding: 20px 8px 4px;}
+      .main {float: left;width: 60%; padding: 0px 0px 20px 35px;}
       .picLeft {display: block;}
       .picMain {display: none;}
       /* Use a media query to add a breakpoint at 800px: */
       @media screen and (max-width: 1000px) {
         .left, .main {width: 100%; /* The width is 100%, when the viewport is 800px or smaller */}
-        .main {padding: 0px 0px 20px 0px;}
+        .main {padding: 0px 0px 20px 0px;} /* Losing the large gap on the left side */
         .picLeft {display: none;}
         .picMain {display: block;}
       }
-      .kids {width: 100%;max-width: 1000px;margin: auto;margin-top: 30px;}
-      form.styledForm input[type=text] {padding: 10px;font-size: 17px;border: 1px solid grey;float: left;width: 80%;background: #f1f1f1;}
-      form.styledForm button {float: left;width: 20%;padding: 10px;background: #1b3a56;color: white;font-size: 17px;border: 1px solid grey;border-left: none;cursor: pointer;}
+      .kids {width: 100%;max-width: 1000px;margin: auto;margin-top: 25px;border-radius: 12px;}
+      form.styledForm input[type=text] {padding: 10px;font-size: 17px;border: 1px solid grey;border-radius: 8px 0px 0px 8px;float: left;width: 80%;background: #f1f1f1;}
+      form.styledForm button {float: left;width: 20%;padding: 10px;background: #1b3a56;color: white;font-size: 17px;border: 1px solid grey;border-radius: 0px 8px 8px 0px;border-left: none;cursor: pointer;}
       form.styledForm button:hover {background: #568aba;}
       form.styledForm::after {content: "";clear: both;display: table;}
       .btn1 {width: 100%;text-align: left;background-color: #568aba; border: 1px solid #DDDDDD; border-radius: 8px;color: white;padding: 12px 16px;font-size: 16px;margin-bottom: 5px;cursor: pointer;font-family: 'Noto Sans',sans-serif;}
@@ -49,7 +49,7 @@
 
   <body onload="startTime()">
     <header class="headerbar">
-      <div style="max-width: 1000px;margin: auto;padding: 5px 5px;">
+      <div style="max-width: 1100px;margin: auto;padding: 5px 5px;">
       <span id="displayTime" class="time"></span>
       <div class="site-name">tim.</div>
       </div>
@@ -66,20 +66,41 @@
       </div>
 
       <div class="main" id="decideColumns">
-        <h3>Anaesthetics</h3>
-        <div id="anaes">
-          <button class="btn1" onclick="window.location.href='https://www.anaesthetic-reference.com.au/';">Anaesthetic Reference</button><br>
-          <button class="btn1" onclick="window.location.href='https://cpd.anzca.edu.au/';">ANZCA CPD</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.anzca.edu.au/';">ANZCA Home</button><br>
-          <button class="btn1" onclick="window.location.href='https://tps.anzca.edu.au/';">ANZCA TPS</button><br>
-          <button class="btn1" onclick="window.location.href='https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs';">Clinical Key (AMH)</button><br>
-          <button class="btn1" onclick="window.location.href='https://easth.allocate-cloud.com.au/EASTHProd/EmployeeOnlineMobile/#/login';">Eastern Health Roster</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.rmhcme.org/userlogin.aspx';">RMH CME</button><br>
-          <button class="btn1" onclick="window.location.href='https://epicprod.mh.org.au/';">RMH EPIC (LAN)</button><br>
-          <button class="btn1" onclick="window.location.href='http://intranet.mh.org.au/w2/i2';">RMH Intranet (LAN)</button><br>
-          <button class="btn1" onclick="window.location.href='http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb';">RMH Leave Roster</button><br>
-          <button class="btn1" onclick="window.location.href='http://remotedocs.mh.org.au/';">RMH Remote Access</button><br>
-          <button class="btn1" onclick="window.location.href='http://timfazio.com/med/';">Tim Fazio</button>
+        <h3>Miscellaneous</h3>
+        <div id="misc">
+          <button class="btn1" onclick="window.location.href='https://www.abc.net.au/news';">ABC News</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.amazon.com.au/';">Amazon</button><br>
+          <button class="btn1" onclick="window.location.href='https://auspost.com.au/auth/login';">Australia Post MyPost</button><br>
+          <button class="btn1" onclick="window.location.href='http://www.bom.gov.au/vic/forecasts/melbourne.shtml';">BoM Weather</button><br>
+          <button class="btn1" onclick="window.location.href='https://myaccount.boost.com.au/home';">Boost Mobile</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.carexpert.com.au/';">Car Expert</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.cashrewards.com.au/';">Cashrewards</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.espn.com.au/f1/';">ESPN F1</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.formula1.com/';">Formula1.com</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.google.com.au/maps';">Google Maps</button><br>
+          <button class="btn1" onclick="window.location.href='https://onedrive.live.com/';">OneDrive</button><br>
+          <button class="btn1" onclick="window.location.href='https://outlook.live.com/';">Outlook</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.ozbargain.com.au/';">OzBargain</button><br>
+          <button class="btn1" onclick="window.location.href='https://petrolspy.com.au/map/latlng/-37.795/145.035';">Petrol Spy</button><br>
+          <button class="btn1" onclick="window.location.href='https://forums.whirlpool.net.au/';">Whirlpool Forums</button>
+        </div>
+        <h3>Social Media & Streaming Services</h3>
+        <div id="social">
+          <button class="btn2" onclick="window.location.href='https://www.disneyplus.com/en-gb/home';">Disney&plus;</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.facebook.com/home.php';">Facebook</button><br>
+          <button class="btn2" onclick="window.location.href='https://watch.foxtel.com.au/app/#/live/sps';">Foxtel</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.instagram.com';">Instagram</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.netflix.com/au/';">Netflix</button><br>
+          <button class="btn2" onclick="window.location.href='https://web.whatsapp.com/';">Whatsapp Web</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.youtube.com/';">YouTube</button>
+        </div>
+        <h3>Reddit</h3>
+        <div id="reddit">
+          <button class="btn1" onclick="window.location.href='https://www.reddit.com/';">Reddit Home</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.reddit.com/r/formula1/';">Formula 1</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.reddit.com/r/fujifilm/';">Fujifilm</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.reddit.com/r/granturismo/';">Gran Turismo</button><br>
+          <button class="btn1" onclick="window.location.href='https://www.reddit.com/r/photography/';">Photography</button>
         </div>
         <h3>Financial</h3>
         <div id="financial">
@@ -91,34 +112,6 @@
           <button class="btn2" onclick="window.location.href='https://securemaxxia.com.au/SecureMaxxia/Login.aspx';">Maxxia</button><br>
           <button class="btn2" onclick="window.location.href='https://ib.nab.com.au/nabib/index.jsp';">NAB</button>
         </div>
-        <h3>Social Media & Streaming Services</h3>
-        <div id="social">
-          <button class="btn1" onclick="window.location.href='https://www.disneyplus.com/en-gb/home';">Disney&plus;</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.facebook.com/home.php';">Facebook</button><br>
-          <button class="btn1" onclick="window.location.href='https://watch.foxtel.com.au/app/#/live/sps';">Foxtel</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.instagram.com';">Instagram</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.netflix.com/au/';">Netflix</button><br>
-          <button class="btn1" onclick="window.location.href='https://web.whatsapp.com/';">Whatsapp Web</button><br>
-          <button class="btn1" onclick="window.location.href='https://www.youtube.com/';">YouTube</button>
-        </div>
-        <h3>Miscellaneous</h3>
-        <div id="misc">
-          <button class="btn2" onclick="window.location.href='https://www.abc.net.au/news';">ABC News</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.amazon.com.au/';">Amazon</button><br>
-          <button class="btn2" onclick="window.location.href='https://auspost.com.au/auth/login';">Australia Post MyPost</button><br>
-          <button class="btn2" onclick="window.location.href='http://www.bom.gov.au/vic/forecasts/melbourne.shtml';">BoM Weather</button><br>
-          <button class="btn2" onclick="window.location.href='https://myaccount.boost.com.au/home';">Boost Mobile</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.carexpert.com.au/';">Car Expert</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.cashrewards.com.au/';">Cashrewards</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.espn.com.au/f1/';">ESPN F1</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.formula1.com/';">Formula1.com</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.google.com.au/maps';">Google Maps</button><br>
-          <button class="btn2" onclick="window.location.href='https://onedrive.live.com/';">OneDrive</button><br>
-          <button class="btn2" onclick="window.location.href='https://outlook.live.com/';">Outlook</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.ozbargain.com.au/';">OzBargain</button><br>
-          <button class="btn2" onclick="window.location.href='https://petrolspy.com.au/map/latlng/-37.795/145.035';">Petrol Spy</button><br>
-          <button class="btn2" onclick="window.location.href='https://forums.whirlpool.net.au/';">Whirlpool Forums</button>
-        </div>
         <h3>Computer Drivers & IT</h3>
         <div id="drivers">
           <button class="btn1" onclick="window.location.href='https://www.amd.com/en/support/chipsets/amd-socket-am5/b650';">AMD Chipset</button><br>
@@ -129,13 +122,21 @@
           <button class="btn1" onclick="window.location.href='https://community.ui.com/releases';">Unifi Releases</button><br>
           <button class="btn1" onclick="window.location.href='https://vip.ventraip.com.au/my-services/hosting';">VentraIP</button>
         </div>
-        <h3>Reddit</h3>
-        <div id="reddit">
-          <button class="btn2" onclick="window.location.href='https://www.reddit.com/';">Reddit Home</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.reddit.com/r/formula1/';">Formula 1</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.reddit.com/r/fujifilm/';">Fujifilm</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.reddit.com/r/granturismo/';">Gran Turismo</button><br>
-          <button class="btn2" onclick="window.location.href='https://www.reddit.com/r/photography/';">Photography</button>
+        <h3>Work and Anaesthesia</h3>
+        <div id="anaes">
+          <button class="btn2" onclick="window.location.href='https://www.anaesthetic-reference.com.au/';">Anaesthetic Reference</button><br>
+          <button class="btn2" onclick="window.location.href='https://anaesthetic-reference.com.au:2083';">Anaes Reference cPanel</button><br>
+          <button class="btn2" onclick="window.location.href='https://cpd.anzca.edu.au/';">ANZCA CPD</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.anzca.edu.au/';">ANZCA Home</button><br>
+          <button class="btn2" onclick="window.location.href='https://tps.anzca.edu.au/';">ANZCA TPS</button><br>
+          <button class="btn2" onclick="window.location.href='https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs';">Clinical Key (AMH)</button><br>
+          <button class="btn2" onclick="window.location.href='https://easth.allocate-cloud.com.au/EASTHProd/EmployeeOnlineMobile/#/login';">Eastern Health Roster</button><br>
+          <button class="btn2" onclick="window.location.href='https://www.rmhcme.org/userlogin.aspx';">RMH CME</button><br>
+          <button class="btn2" onclick="window.location.href='https://epicprod.mh.org.au/';">RMH EPIC (LAN)</button><br>
+          <button class="btn2" onclick="window.location.href='http://intranet.mh.org.au/w2/i2';">RMH Intranet (LAN)</button><br>
+          <button class="btn2" onclick="window.location.href='http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb';">RMH Leave Roster</button><br>
+          <button class="btn2" onclick="window.location.href='http://remotedocs.mh.org.au/';">RMH Remote Access</button><br>
+          <button class="btn2" onclick="window.location.href='http://timfazio.com/med/';">Tim Fazio</button>
         </div>
 
         <img src="Kids.jpg?v=2" alt="Kids" class="kids picMain">
