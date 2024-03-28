@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tim's Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title for shortcut on ios home screen -->
+    <meta name="apple-mobile-web-app-title" content="Tim's Home">
+
+    <link rel="preload" href="fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin="">
+    <link rel="preload" href="fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin="">
+    <link rel="preload" href="fonts/poppins-v5-latin-700.woff2" as="font" crossorigin="">
+
+    <style>
+      @font-face {font-family:'Noto Sans';font-style:normal;font-weight:400;font-display:fallback;src:local("Noto Sans"),local("NotoSans"),url(fonts/noto-sans-v7-latin-regular.woff2) format("woff2"),url(fonts/noto-sans-v7-latin-regular.woff) format("woff");}
+      @font-face {font-family:'Noto Sans';font-style:normal;font-weight:700;font-display:fallback;src:local("Noto Sans Bold"),local("NotoSans-Bold"),url(fonts/noto-sans-v7-latin-700.woff2) format("woff2"),url(fonts/noto-sans-v7-latin-700.woff) format("woff");}
+      @font-face {font-family:Poppins;font-style:normal;font-weight:700;font-display:fallback;src:local("Poppins Bold"),local("Poppins-Bold"),url(fonts/poppins-v5-latin-700.woff2) format("woff2"),url(fonts/poppins-v5-latin-700.woff) format("woff");}
+      * {box-sizing: border-box;}
+      .row::after {content: "";clear: both;display: table;}
+      body {background-color: #FFFFFF;font-family: 'Noto Sans',sans-serif;padding: 40px 0 10px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+      a {text-decoration: none;color: #2196F3;}
+      .headerbar {background: #95C6EA;color: #FFFFFF;border-bottom: 3px solid #AAAAAA;line-height: 30px;position: fixed;top: 0;left: 0;right: 0;z-index: 1000;}
+      .spacer {font-size: 0.9em;padding: 8px 20px;color: #FFFFFF;float: left;line-height: 1.3;}
+      .site-name {vertical-align: top;margin: 8px 10px;text-align: center;font-family:Poppins,sans-serif;font-size: 26px;font-weight: normal;line-height: 30px;}
+      .time {font-size: 0.9em;padding: 8px 8px;color: #FFFFFF;float: right;line-height: 1.3;}
+      #pageWrap {max-width: 1000px;margin: auto;padding: 35px 5px;}
+      /* Responsive code below */
+      .left {float: left;width: 40%; text-align: center;padding: 0px 8px;}
+      .main {float: left;width: 60%; padding: 0px 0px 20px 40px;}
+      .picLeft {display: block;}
+      .picMain {display: none;}
+      /* Use a media query to add a breakpoint at 800px: */
+      @media screen and (max-width: 800px) {
+        .left, .main {width: 100%; /* The width is 100%, when the viewport is 800px or smaller */}
+        .main {padding: 0px 0px 20px 0px;}
+        .picLeft {display: none;}
+        .picMain {display: block;}
+      }
+      .kids {width: 100%;max-width: 500px;margin: auto;margin-top: 30px;}
+      #google {width: 95%;box-sizing: border-box;border: 1px solid #ccc;border-radius: 8px;font-size: 16px;background-color: white;background-image: url('searchicon.png');background-position: 10px 10px; background-repeat: no-repeat;padding: 10px 20px 10px 40px;}
+    </style>
+  </head>
+
+  <body>
+    <header class="headerbar">
+      <div style="max-width: 1000px;margin: auto;padding: 5px 5px;">
+      <span class="time">1:30:45<br>28/03</span>
+      <div class="site-name">tim.</div>
+      </div>
+    </header>
+    <div id="pageWrap">
+
+      <div class="left">
+        <form>
+          <input type="text" name="search" placeholder="Search..." id="google">
+        </form>
+
+        <img src="images/ROTEM_examples.gif" alt="Kids" class="kids picLeft">
+      </div>
+
+      <div class="main" id="decideColumns">
+        <h3>Anaesthetics</h3>
+        <div id="anaes">
+          <a href="https://www.anaesthetic-reference.com.au/">Anaes Reference</a><br>
+          <a href="https://cpd.anzca.edu.au/">ANZCA CPD</a><br>
+          <a href="http://www.anzca.edu.au/">ANZCA Home</a><br>
+          <a href="https://tps.anzca.edu.au/">ANZCA TPS</a><br>
+          <a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs">Clinical Key (AMH)</a><br>
+          <a href="https://epicprod.mh.org.au/">EPIC EMR (LAN)</a><br>
+          <a href="http://intranet.mh.org.au/w2/i2">Intranet (LAN)</a><br>
+          <a href="http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb">Leave Roster</a><br>
+          <a href="http://remotedocs.mh.org.au/">Remote Access</a><br>
+          <a href="https://www.rmhcme.org/userlogin.aspx">RMH CME</a><br>
+          <a href="http://timfazio.com/med/">Tim Fazio</a><br>
+        </div>
+        <h3>Financial</h3>
+        <div id="financial">
+          <a href="https://login.anz.com/internetbanking">ANZ</a><br>
+          <a href="https://login.aware.com.au/">Aware Super</a><br>
+          <a href="https://ibanking.bankofmelbourne.com.au/ibank/loginPage.action">Bank of Melbourne</a><br>
+          <a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx">CommSec</a><br>
+          <a href="https://securemaxxia.com.au/SecureMaxxia/Login.aspx">Maxxia</a><br>
+          <a href="https://ib.nab.com.au/nabib/index.jsp">NAB</a><br>
+        </div>
+        <h3>Social Media & Streaming Services</h3>
+        <div id="social">
+          <a href="https://www.disneyplus.com/en-gb/home">Disney&plus;</a><br>
+          <a href="https://www.facebook.com/home.php">Facebook</a><br>
+          <a href="https://watch.foxtel.com.au/app/#/live/sps">Foxtel</a><br>
+          <a href="https://www.facebook.com/home.php">Instagram</a><br>
+          <a href="https://www.netflix.com/au/">Netflix</a><br>
+          <a href="https://web.whatsapp.com/">Whatsapp Web</a><br>
+          <a href="https://www.youtube.com/">YouTube</a><br>
+        </div>
+        <h3>Miscellaneous</h3>
+        <div id="misc">
+          <a href="https://www.abc.net.au/news">ABC News</a><br>
+          <a href="https://www.amazon.com.au/">Amazon Australia</a><br>
+          <a href="https://auspost.com.au/auth/login">Australia Post MyPost</a><br>
+          <a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml">BoM Weather</a><br>
+          <a href="https://myaccount.boost.com.au/home">Boost Mobile</a><br>
+          <a href="https://www.carexpert.com.au/">Car Expert</a><br>
+          <a href="https://www.cashrewards.com.au/">Cashrewards</a><br>
+          <a href="https://www.espn.com.au/f1/">ESPN F1</a><br>
+          <a href="https://www.formula1.com/">Formula1.com</a><br>
+          <a href="https://www.google.com.au/maps">Google Maps</a><br>
+          <a href="https://outlook.live.com/">Hotmail</a><br>
+          <a href="https://onedrive.live.com/">OneDrive</a><br>
+          <a href="https://www.ozbargain.com.au/">OzBargain</a><br>
+          <a href="https://petrolspy.com.au/map/latlng/-37.795/145.035">Petrol Spy</a><br>
+          <a href="https://forums.whirlpool.net.au/">Whirlpool Forums</a><br>
+        </div>
+        <h3>Computer Drivers & IT</h3>
+        <div id="drivers">
+          <a href="https://www.amd.com/en/support/chipsets/amd-socket-am5/b650">AMD Chipset</a><br>
+          <a href="https://fanatec.com/eu-en/driver">Fanatec</a><br>
+          <a href="https://www.nvidia.com/en-us/geforce/drivers/">Graphics </a><br>
+          <a href="https://rog.asus.com/motherboards/rog-strix/rog-strix-b650e-i-gaming-wifi-model/helpdesk_download/">Motherboard</a><br>
+          <a href="https://192.168.1.1/">Unifi Controller (LAN)</a><br>
+          <a href="https://community.ui.com/releases">Unifi Releases</a><br>
+          <a href="https://vip.ventraip.com.au/my-services/hosting">VentraIP</a><br>
+        </div>
+        <h3>Reddit</h3>
+        <div id="reddit">
+          <a href="https://www.reddit.com/">Reddit Home</a><br>
+          <a href="https://www.reddit.com/r/formula1/">Formula 1</a><br>
+          <a href="https://www.reddit.com/r/fujifilm/">Fujifilm</a><br>
+          <a href="https://www.reddit.com/r/granturismo/">Gran Turismo</a><br>
+          <a href="https://www.reddit.com/r/photography/">Photography</a><br>
+        </div>
+
+        <img src="images/ROTEM_examples.gif" alt="Kids" class="kids picMain">
+      </div>
+
+    </div>
+
+    <script>
+    // Columns based on width of page
+    var getMain = document.getElementById("decideColumns");
+    var width = getMain.offsetWidth;
+    console.log("Width: " + width + "px");
+    // setting initial column count
+    if (width > 480){
+      document.getElementById('anaes').style.columnCount = 2;
+      document.getElementById('financial').style.columnCount = 2;
+      document.getElementById('social').style.columnCount = 2;
+      document.getElementById('misc').style.columnCount = 2;
+      document.getElementById('drivers').style.columnCount = 2;
+      document.getElementById('reddit').style.columnCount = 2;
+    } else {
+      document.getElementById('anaes').style.columnCount = 1;
+      document.getElementById('financial').style.columnCount = 1;
+      document.getElementById('social').style.columnCount = 1;
+      document.getElementById('misc').style.columnCount = 1;
+      document.getElementById('drivers').style.columnCount = 1;
+      document.getElementById('reddit').style.columnCount = 1;
+    }
+    
+    if (window.addEventListener) {  // all browsers except IE before version 9
+      window.addEventListener ("resize", onResizeEvent, true);
+    } else {
+      if (window.attachEvent) {   // IE before version 9
+        window.attachEvent("onresize", onResizeEvent);
+      }
+    }
+    
+    function onResizeEvent() {
+      newMain = document.getElementById("decideColumns");
+      newWidth = newMain.offsetWidth;
+      if(newWidth != width){
+        width = newWidth;
+        console.log(width);
+        if (width > 500){
+          document.getElementById('anaes').style.columnCount = 2;
+          document.getElementById('financial').style.columnCount = 2;
+          document.getElementById('social').style.columnCount = 2;
+          document.getElementById('misc').style.columnCount = 2;
+          document.getElementById('drivers').style.columnCount = 2;
+          document.getElementById('reddit').style.columnCount = 2;
+        } else {
+          document.getElementById('anaes').style.columnCount = 1;
+          document.getElementById('financial').style.columnCount = 1;
+          document.getElementById('social').style.columnCount = 1;
+          document.getElementById('misc').style.columnCount = 1;
+          document.getElementById('drivers').style.columnCount = 1;
+          document.getElementById('reddit').style.columnCount = 1;
+        }
+      }
+    }
+    </script>
+  </body>
+</html>
