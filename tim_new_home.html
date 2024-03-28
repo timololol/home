@@ -25,12 +25,12 @@
       .time {font-size: 0.9em;padding: 8px 8px;color: #FFFFFF;float: right;line-height: 1.3;}
       #pageWrap {max-width: 1000px;margin: auto;padding: 35px 5px;}
       /* Responsive code below */
-      .left {float: left;width: 40%; text-align: center;padding: 0px 8px;}
+      .left {float: left;width: 40%; text-align: center;padding: 14px 8px;}
       .main {float: left;width: 60%; padding: 0px 0px 20px 40px;}
       .picLeft {display: block;}
       .picMain {display: none;}
       /* Use a media query to add a breakpoint at 800px: */
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 1000px) {
         .left, .main {width: 100%; /* The width is 100%, when the viewport is 800px or smaller */}
         .main {padding: 0px 0px 20px 0px;}
         .picLeft {display: none;}
@@ -38,6 +38,7 @@
       }
       .kids {width: 100%;max-width: 500px;margin: auto;margin-top: 30px;}
       #google {width: 95%;box-sizing: border-box;border: 1px solid #ccc;border-radius: 8px;font-size: 16px;background-color: white;background-image: url('searchicon.png');background-position: 10px 10px; background-repeat: no-repeat;padding: 10px 20px 10px 40px;}
+      .btn {width: 100%;text-align: left;background-color: #6881a6; border: 1px solid #DDDDDD; border-radius: 8px;color: white;padding: 12px 16px;font-size: 16px;margin-bottom: 5px;cursor: pointer;}
     </style>
   </head>
 
@@ -61,17 +62,17 @@
       <div class="main" id="decideColumns">
         <h3>Anaesthetics</h3>
         <div id="anaes">
-          <a href="https://www.anaesthetic-reference.com.au/">Anaes Reference</a><br>
-          <a href="https://cpd.anzca.edu.au/">ANZCA CPD</a><br>
-          <a href="http://www.anzca.edu.au/">ANZCA Home</a><br>
-          <a href="https://tps.anzca.edu.au/">ANZCA TPS</a><br>
-          <a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs">Clinical Key (AMH)</a><br>
-          <a href="https://epicprod.mh.org.au/">EPIC EMR (LAN)</a><br>
-          <a href="http://intranet.mh.org.au/w2/i2">Intranet (LAN)</a><br>
-          <a href="http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb">Leave Roster</a><br>
-          <a href="http://remotedocs.mh.org.au/">Remote Access</a><br>
-          <a href="https://www.rmhcme.org/userlogin.aspx">RMH CME</a><br>
-          <a href="http://timfazio.com/med/">Tim Fazio</a><br>
+          <button class="btn" onclick="window.location.href='https://www.anaesthetic-reference.com.au/';">Anaes Reference</button><br>
+          <button class="btn" onclick="window.location.href='https://cpd.anzca.edu.au/';">ANZCA CPD</button><br>
+          <button class="btn" onclick="window.location.href='https://www.anzca.edu.au/';">ANZCA Home</button><br>
+          <button class="btn" onclick="window.location.href='https://tps.anzca.edu.au/';">ANZCA TPS</button><br>
+          <button class="btn" onclick="window.location.href='https://cpd.anzca.edu.au/';">ANZCA CPD</button><br>
+          <button class="btn" onclick="window.location.href='https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs';">Clinical Key (AMH)</button><br>
+          <button class="btn" onclick="window.location.href='https://epicprod.mh.org.au/';">EPIC EMR (LAN)</button><br>
+          <button class="btn" onclick="window.location.href='http://intranet.mh.org.au/w2/i2';">Intranet (LAN)</button><br>
+          <button class="btn" onclick="window.location.href='http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb';">Leave Roster</button><br>
+          <button class="btn" onclick="window.location.href='https://www.rmhcme.org/userlogin.aspx';">RMH CME</button><br>
+          <button class="btn" onclick="window.location.href='http://timfazio.com/med/';">Tim Fazio</button>
         </div>
         <h3>Financial</h3>
         <div id="financial">
