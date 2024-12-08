@@ -21,7 +21,6 @@
       a {text-decoration: none;color: #2196F3;}
       h1, h2, h3, h4, h5 {font-family: Poppins,sans-serif;font-weight: 700;line-height: 1.2em;color: #6D5F48;}
       .headerbar {background: #e7d6c3;color: #FFFFFF;border-bottom: 2px solid #AAAAAA;line-height: 30px;position: fixed;top: 0;left: 0;right: 0;z-index: 1000;}
-      .spacer {font-size: 0.9em;padding: 8px 20px;color: #FFFFFF;float: left;line-height: 1.3;}
       .site-name {vertical-align: top;margin: 8px 10px;text-align: center;font-family:Poppins,sans-serif;color: #295176;font-size: 26px;font-weight: normal;line-height: 30px;}
       .time {font-size: 0.9em;padding: 8px 8px;color: #6D5F48;font-weight: 700;float: right;line-height: 1.3;}
       #pageWrap {max-width: 1450px;margin: auto;padding: 12px 5px;}
@@ -45,7 +44,8 @@
       a.one:link, a.one:visited {width: 100%;background-color: #568aba;color: white;border: 1px solid #DDDDDD;padding: 10px 14px;margin-bottom: 4px;border-radius: 10px;text-align: left;text-decoration: none;font-size: 16px;font-family: 'Noto Sans',sans-serif;display: inline-block;}
       a.two:link, a.two:visited {width: 100%;background-color: #1b3a56;color: white;border: 1px solid #DDDDDD;padding: 10px 14px;margin-bottom: 4px;border-radius: 10px;text-align: left;text-decoration: none;font-size: 16px;font-family: 'Noto Sans',sans-serif;display: inline-block;}
       a.one:hover, a.one:active,a.two:hover, a.two:active {background-color: #A7ADAD;color: #333333;}
-      .columnify {column-gap:4px;}
+      .columnify {column-gap: 4px;}
+      #spacerTop {width: 1px;height: 0px}
     </style>
   </head>
 
@@ -60,91 +60,92 @@
 
       <div class="left">
         <form action="https://www.google.com/search" method="get" class="styledForm">
-          <input type="text" name="q" placeholder="Search Google..." class="google">
-          <button type="submit" value="search">Go</button>
+          <input type="text" name="q" id="searchBar" onkeyup="search()" placeholder="Search" class="google">
+          <button type="submit" value="search">Go</button> 
         </form>
 
         <img src="Kids.jpg?v=2" alt="Kids" class="kids picLeft">
       </div>
 
       <div class="main" id="decideColumns">
-        <h3>Miscellaneous</h3>
+        <div id="spacerTop"></div>
+        <span id="headinga"><h3>Miscellaneous</h3></span>
         <div class="columnify" id="misc">
-          <a href="https://www.abc.net.au/news" class="one">ABC News</a>
-          <a href="https://www.amazon.com.au/" class="one">Amazon</a>
-          <a href="https://auspost.com.au/auth/login" class="one">Australia Post MyPost</a>
-          <a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml" class="one">BoM Weather</a>
-          <a href="https://www.carexpert.com.au/" class="one">Car Expert</a>
-          <a href="https://www.cashrewards.com.au/" class="one">Cashrewards</a>
-          <a href="https://www.espn.com.au/f1/" class="one">ESPN F1</a>
-          <a href="https://www.formula1.com/" class="one">Formula1.com</a>
-          <a href="https://connect.garmin.com/modern/home" class="one">Garmin Connect</a>
-          <a href="https://www.google.com.au/maps" class="one">Google Maps</a>
-          <a href="https://onedrive.live.com/" class="one">OneDrive</a>
-          <a href="https://outlook.live.com/" class="one">Outlook</a>
-          <a href="https://www.ozbargain.com.au/" class="one">OzBargain</a>
-          <a href="https://petrolspy.com.au/map/latlng/-37.795/145.035" class="one">Petrol Spy</a>
-          <a href="https://forums.whirlpool.net.au/" class="one">Whirlpool Forums</a>
+          <a href="https://www.abc.net.au/news" class="one target">ABC News</a>
+          <a href="https://www.amazon.com.au/" class="one target">Amazon</a>
+          <a href="https://auspost.com.au/auth/login" class="one target">Australia Post MyPost</a>
+          <a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml" class="one target">BoM Weather</a>
+          <a href="https://www.carexpert.com.au/" class="one target">Car Expert</a>
+          <a href="https://www.cashrewards.com.au/" class="one target">Cashrewards</a>
+          <a href="https://www.espn.com.au/f1/" class="one target">ESPN F1</a>
+          <a href="https://www.formula1.com/" class="one target">Formula1.com</a>
+          <a href="https://connect.garmin.com/modern/home" class="one target">Garmin Connect</a>
+          <a href="https://www.google.com.au/maps" class="one target">Google Maps</a>
+          <a href="https://onedrive.live.com/" class="one target">OneDrive</a>
+          <a href="https://outlook.live.com/" class="one target">Outlook</a>
+          <a href="https://www.ozbargain.com.au/" class="one target">OzBargain</a>
+          <a href="https://petrolspy.com.au/map/latlng/-37.795/145.035" class="one target">Petrol Spy</a>
+          <a href="https://forums.whirlpool.net.au/" class="one target">Whirlpool Forums</a>
         </div>
-        <h3>Social Media & Streaming Services</h3>
+        <span id="headingb"><h3>Social Media & Streaming Services</h3></span>
         <div class="columnify" id="social">
-          <a href="https://www.primevideo.com" class="two">Amazon Prime Video</a>
-          <a href="https://www.disneyplus.com/en-gb/home" class="two">Disney&plus;</a>
-          <a href="https://www.facebook.com/home.php" class="two">Facebook</a>
-          <a href="https://watch.foxtel.com.au/app/#/live/sps" class="two">Foxtel</span></a>
-          <a href="https://www.instagram.com" class="two">Instagram</a>
-          <a href="https://www.netflix.com/au/" class="two">Netflix</a>
-          <a href="https://web.whatsapp.com/" class="two">Whatsapp Web</a>
-          <a href="https://www.youtube.com/" class="two">YouTube</a>
+          <a href="https://www.primevideo.com" class="two target">Amazon Prime Video</a>
+          <a href="https://www.disneyplus.com/en-gb/home" class="two target">Disney&plus;</a>
+          <a href="https://www.facebook.com/home.php" class="two target">Facebook</a>
+          <a href="https://watch.foxtel.com.au/app/#/live/sps" class="two target">Foxtel</span></a>
+          <a href="https://www.instagram.com" class="two target">Instagram</a>
+          <a href="https://www.netflix.com/au/" class="two target">Netflix</a>
+          <a href="https://web.whatsapp.com/" class="two target">Whatsapp Web</a>
+          <a href="https://www.youtube.com/" class="two target">YouTube</a>
         </div>
-        <h3>Reddit</h3>
+        <span id="headingc"><h3>Reddit</h3></span>
         <div class="columnify" id="reddit">
-          <a href="https://www.reddit.com/" class="one">Reddit Home</a>
-          <a href="https://www.reddit.com/r/cycling/" class="one">Cycling</a>
-          <a href="https://www.reddit.com/r/formula1/" class="one">Formula 1</a>
-          <a href="https://www.reddit.com/r/fujifilm/" class="one">Fujifilm</a>
-          <a href="https://www.reddit.com/r/granturismo/" class="one">Gran Turismo</a>
-          <a href="https://www.reddit.com/r/MicrosoftFlightSim/" class="one">MSFS</a>
+          <a href="https://www.reddit.com/" class="one target">Reddit Home</a>
+          <a href="https://www.reddit.com/r/cycling/" class="one target">Cycling</a>
+          <a href="https://www.reddit.com/r/formula1/" class="one target">Formula 1</a>
+          <a href="https://www.reddit.com/r/fujifilm/" class="one target">Fujifilm</a>
+          <a href="https://www.reddit.com/r/granturismo/" class="one target">Gran Turismo</a>
+          <a href="https://www.reddit.com/r/MicrosoftFlightSim/" class="one target">MSFS</a>
         </div>
-        <h3>Financial</h3>
+        <span id="headingd"><h3>Financial</h3></span>
         <div class="columnify" id="financial">
-          <a href="https://login.anz.com/internetbanking" class="two">ANZ</a>
-          <a href="https://login.aware.com.au/" class="two">Aware Super</a>
-          <a href="https://ibanking.bankofmelbourne.com.au/ibank/loginPage.action" class="two">Bank of Melbourne</a>
-          <a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx" class="two">CommSec</a>
-          <a href="https://www-au.computershare.com/Investor/#Home" class="two">Computershare</a>
-          <a href="https://securemaxxia.com.au/SecureMaxxia/Login.aspx" class="two">Maxxia</a>
-          <a href="https://ib.nab.com.au/nabib/index.jsp" class="two">NAB</a>
+          <a href="https://login.anz.com/internetbanking" class="two target target">ANZ</a>
+          <a href="https://login.aware.com.au/" class="two target">Aware Super</a>
+          <a href="https://ibanking.bankofmelbourne.com.au/ibank/loginPage.action" class="two target">Bank of Melbourne</a>
+          <a href="https://www2.commsec.com.au/Public/HomePage/HomePrivate.aspx" class="two target">CommSec</a>
+          <a href="https://www-au.computershare.com/Investor/#Home" class="two target">Computershare</a>
+          <a href="https://securemaxxia.com.au/SecureMaxxia/Login.aspx" class="two target">Maxxia</a>
+          <a href="https://ib.nab.com.au/nabib/index.jsp" class="two target">NAB</a>
         </div>
-        <h3>Computer Drivers & IT</h3>
+        <span id="headinge"><h3>Computer Drivers & IT</h3></span>
         <div class="columnify" id="drivers">
-          <a href="https://www.amd.com/en/support/chipsets/amd-socket-am5/b650" class="one">AMD Chipset</a>
-          <a href="https://fanatec.com/eu-en/driver" class="one">Fanatec</a>
-          <a href="https://github.com/timololol/home" class="one">Github</a>
-          <a href="https://www.nvidia.com/en-us/geforce/drivers/" class="one">Graphics</a>
-          <a href="https://rog.asus.com/motherboards/rog-strix/rog-strix-b650e-i-gaming-wifi-model/helpdesk_download/" class="one">Motherboard</a>
-          <a href="https://superhub.superloop.com/dashboard" class="one">Superloop Dashboard</a>
-          <a href="https://192.168.1.1/" class="one">Unifi Controller (LAN)</a>
-          <a href="https://community.ui.com/releases" class="one">Unifi Releases</a>
-          <a href="https://vip.ventraip.com.au/my-services/hosting" class="one">VentraIP</a>
+          <a href="https://www.amd.com/en/support/chipsets/amd-socket-am5/b650" class="one target">AMD Chipset</a>
+          <a href="https://fanatec.com/eu-en/driver" class="one target">Fanatec</a>
+          <a href="https://github.com/timololol/home" class="one target">Github</a>
+          <a href="https://www.nvidia.com/en-us/geforce/drivers/" class="one target">Graphics</a>
+          <a href="https://rog.asus.com/motherboards/rog-strix/rog-strix-b650e-i-gaming-wifi-model/helpdesk_download/" class="one target">Motherboard</a>
+          <a href="https://superhub.superloop.com/dashboard" class="one target">Superloop Dashboard</a>
+          <a href="https://192.168.1.1/" class="one target">Unifi Controller (LAN)</a>
+          <a href="https://community.ui.com/releases" class="one target">Unifi Releases</a>
+          <a href="https://vip.ventraip.com.au/my-services/hosting" class="one target">VentraIP</a>
         </div>
-        <h3>Work and Anaesthesia</h3>
+        <span id="headingf"><h3>Work and Anaesthesia</h3></span>
         <div class="columnify" id="anaes">
-          <a href="https://www.anaesthetic-reference.com.au/" class="two">Anaesthetic Reference</a>
-          <a href="https://anaesthetic-reference.com.au:2083" class="two">Anaes Reference cPanel</a>
-          <a href="https://cpd.anzca.edu.au/" class="two">ANZCA CPD</a>
-          <a href="https://www.anzca.edu.au/" class="two">ANZCA Home</a>
-          <a href="https://tps.anzca.edu.au/" class="two">ANZCA TPS</a>
-          <a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs" class="two">Clinical Key (AMH)</a>
-          <a href="https://easth.allocate-cloud.com.au/EASTHProd/EmployeeOnlineMobile/#/login" class="two">Eastern Health Roster</a>
-          <a href="https://rmhgemweblp01a.ssg.org.au/rotem/index" class="two">GEMweb ROTEM Viewer (LAN)</a>
-          <a href="https://biredcap.mh.org.au" class="two">REDCap</a>
-          <a href="https://www.rmhcme.org/userlogin.aspx" class="two">RMH CME</a>
-          <a href="https://epicprod.mh.org.au/" class="two">RMH EPIC (LAN)</a>
-          <a href="http://intranet.mh.org.au/w2/i2" class="two">RMH Intranet (LAN)</a>
-          <a href="http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb" class="two">RMH Leave Roster</a>
-          <a href="http://remotedocs.mh.org.au/" class="two">RMH Remote Access</a>
-          <a href="http://timfazio.com/med/" class="two">Tim Fazio</a>
+          <a href="https://www.anaesthetic-reference.com.au/" class="two target">Anaesthetic Reference</a>
+          <a href="https://anaesthetic-reference.com.au:2083" class="two target">Anaes Reference cPanel</a>
+          <a href="https://cpd.anzca.edu.au/" class="two target">ANZCA CPD</a>
+          <a href="https://www.anzca.edu.au/" class="two target">ANZCA Home</a>
+          <a href="https://tps.anzca.edu.au/" class="two target">ANZCA TPS</a>
+          <a href="https://login.ezproxy.anzca.edu.au/login?qurl=https://www.clinicalkey.com.au%2f#!/browse/drugs" class="two target">Clinical Key (AMH)</a>
+          <a href="https://easth.allocate-cloud.com.au/EASTHProd/EmployeeOnlineMobile/#/login" class="two target">Eastern Health Roster</a>
+          <a href="https://rmhgemweblp01a.ssg.org.au/rotem/index" class="two target">GEMweb ROTEM Viewer (LAN)</a>
+          <a href="https://biredcap.mh.org.au" class="two target">REDCap</a>
+          <a href="https://www.rmhcme.org/userlogin.aspx" class="two target">RMH CME</a>
+          <a href="https://epicprod.mh.org.au/" class="two target">RMH EPIC (LAN)</a>
+          <a href="http://intranet.mh.org.au/w2/i2" class="two target">RMH Intranet (LAN)</a>
+          <a href="http://27.131.79.14/fmi/webd#AnaestheticRosteringWeb" class="two target">RMH Leave Roster</a>
+          <a href="http://remotedocs.mh.org.au/" class="two target">RMH Remote Access</a>
+          <a href="http://timfazio.com/med/" class="two target">Tim Fazio</a>
         </div>
 
         <img src="Kids.jpg?v=2" alt="Kids" class="kids picMain">
@@ -240,6 +241,78 @@
       if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
       return i;
     }
+
+    function search() {
+    var input = document.getElementById("searchBar");
+    var filter = input.value.toLowerCase();
+    var nodes = document.getElementsByClassName("target");
+
+    // Hiding headings, borders and jump to section
+    let headinga = document.getElementById("headinga");
+    let headingb = document.getElementById("headingb");
+    let headingc = document.getElementById("headingc");
+    let headingd = document.getElementById("headingd");
+    let headinge = document.getElementById("headinge");
+    let headingf = document.getElementById("headingf");
+
+    if (input.value.length == 0) {
+      headinga.style.display = "block";
+      headingb.style.display = "block";
+      headingc.style.display = "block";
+      headingd.style.display = "block";
+      headinge.style.display = "block";
+      headingf.style.display = "block";
+    } else {
+      headinga.style.display = "none";
+      headingb.style.display = "none";
+      headingc.style.display = "none";
+      headingd.style.display = "none";
+      headinge.style.display = "none";
+      headingf.style.display = "none";
+    }
+
+    for (i = 0; i < nodes.length; i++) {
+      if (nodes[i].innerText.toLowerCase().includes(filter)) {
+        nodes[i].style.display = "inline-block"
+        document.getElementById('anaes').style.columnCount = 1;
+        document.getElementById('financial').style.columnCount = 1;
+        document.getElementById('social').style.columnCount = 1;
+        document.getElementById('misc').style.columnCount = 1;
+        document.getElementById('drivers').style.columnCount = 1;
+        document.getElementById('reddit').style.columnCount = 1;
+      } else {
+        nodes[i].style.display = "none";
+      }
+    }
+    if (input.value.length == 0) {
+      spacerTop.style.height = "0px";
+      if (width > 760){
+        document.getElementById('anaes').style.columnCount = 3;
+        document.getElementById('financial').style.columnCount = 3;
+        document.getElementById('social').style.columnCount = 3;
+        document.getElementById('misc').style.columnCount = 3;
+        document.getElementById('drivers').style.columnCount = 3;
+        document.getElementById('reddit').style.columnCount = 3;
+      } else if (width > 480){
+        document.getElementById('anaes').style.columnCount = 2;
+        document.getElementById('financial').style.columnCount = 2;
+        document.getElementById('social').style.columnCount = 2;
+        document.getElementById('misc').style.columnCount = 2;
+        document.getElementById('drivers').style.columnCount = 2;
+        document.getElementById('reddit').style.columnCount = 2;
+      } else {
+        document.getElementById('anaes').style.columnCount = 1;
+        document.getElementById('financial').style.columnCount = 1;
+        document.getElementById('social').style.columnCount = 1;
+        document.getElementById('misc').style.columnCount = 1;
+        document.getElementById('drivers').style.columnCount = 1;
+        document.getElementById('reddit').style.columnCount = 1;
+      }
+    } else {
+      spacerTop.style.height = "20px";
+    }
+  }
+
     </script>
   </body>
 </html>
