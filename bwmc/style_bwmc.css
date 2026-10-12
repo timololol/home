@@ -149,6 +149,13 @@ button {
 }
 
 
+.logo-image {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+
 .logo-mark {
     width: 36px;
     height: 36px;
