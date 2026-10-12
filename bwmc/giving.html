@@ -9,309 +9,10 @@
           content="Discover how to give to BWMC and support our ministries.">
 
     <!-- Reuse the existing BWMC stylesheet -->
-    <link rel="stylesheet" href="style_bwmc.css?v=1.05">
+    <link rel="stylesheet" href="style_bwmc.css?v=1.06">
 
   <style>
-    :root {
-      --giving-blue: var(--accent, #3978b8);
-      --giving-dark: #152b43;
-      --giving-muted: #64748b;
-      --giving-border: #e2e8f0;
-      --giving-surface: #f5f8fc;
-    }
 
-    .giving-page {
-      max-width: 1180px;
-      width: 92%;
-      margin: 0 auto;
-      padding-bottom: 70px;
-    }
-
-    /* Hero — consistent with events.html */
-    .giving-hero {
-      background: var(--giving-dark);
-      color: white;
-      padding: 76px 24px;
-      margin: 28px 0 42px;
-      border-radius: 24px;
-      text-align: center;
-    }
-
-    .giving-hero .eyebrow {
-      color: #b8d9ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .8rem;
-      font-weight: 700;
-    }
-
-    .giving-hero h1 {
-      color: white;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin: 14px 0;
-    }
-
-    .giving-hero p {
-      max-width: 660px;
-      margin: 0 auto;
-      color: #dbe7f4;
-      line-height: 1.7;
-    }
-
-    .giving-intro {
-      max-width: 760px;
-      margin: 0 auto 34px;
-      text-align: center;
-    }
-
-    .giving-intro h2 {
-      color: var(--giving-dark);
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      margin-bottom: 12px;
-    }
-
-    .giving-intro p {
-      color: var(--giving-muted);
-      line-height: 1.8;
-    }
-
-    /* Three floating photo cards */
-    .giving-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .giving-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--giving-border);
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(21, 43, 67, .06);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .giving-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 34px rgba(21, 43, 67, .13);
-    }
-
-    .giving-photo {
-      position: relative;
-      height: 225px;
-      overflow: hidden;
-      background: #dbe7f4;
-    }
-
-    .giving-photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-
-    .giving-card:hover .giving-photo img {
-      transform: scale(1.05);
-    }
-
-    .giving-photo::after {
-      content: "";
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(14, 31, 51, .55)
-      );
-      pointer-events: none;
-    }
-
-    .giving-photo-label {
-      position: absolute;
-      z-index: 1;
-      left: 20px;
-      bottom: 17px;
-      color: white;
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .giving-card-content {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 24px;
-    }
-
-    .giving-card h2 {
-      color: var(--giving-dark);
-      font-size: 1.3rem;
-      line-height: 1.35;
-      margin: 0 0 12px;
-    }
-
-    .giving-card p {
-      color: var(--giving-muted);
-      font-size: .94rem;
-      line-height: 1.75;
-      margin: 0 0 18px;
-    }
-
-    .giving-scripture {
-      padding: 14px;
-      margin-top: auto;
-      margin-bottom: 20px;
-      border-left: 3px solid var(--giving-blue);
-      border-radius: 0 10px 10px 0;
-      background: var(--giving-surface);
-      color: var(--giving-dark);
-      font-size: .86rem;
-      line-height: 1.65;
-      font-style: italic;
-    }
-
-    .giving-scripture strong {
-      display: block;
-      margin-top: 6px;
-      color: var(--giving-muted);
-      font-size: .8rem;
-      font-style: normal;
-    }
-
-    .giving-button {
-      display: inline-block;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 12px 18px;
-      border: 0;
-      border-radius: 999px;
-      background: var(--giving-blue);
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: .92rem;
-      transition: background .2s ease, opacity .2s ease;
-    }
-
-    .giving-button:hover {
-      opacity: .88;
-    }
-
-    .giving-note {
-      margin-top: 36px;
-      padding: 30px;
-      border: 1px solid var(--giving-border);
-      border-radius: 20px;
-      background: var(--giving-surface);
-      text-align: center;
-    }
-
-    .giving-note h2,
-    .giving-contact h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
-    }
-
-    .giving-note h2 {
-      color: var(--giving-dark);
-    }
-
-    .giving-note p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--giving-muted);
-      line-height: 1.75;
-    }
-
-    .giving-contact {
-      margin-top: 28px;
-      padding: 36px 24px;
-      border-radius: 20px;
-      background: var(--giving-dark);
-      color: white;
-      text-align: center;
-    }
-
-    .giving-contact h2 {
-      color: white;
-    }
-
-    .giving-contact p {
-      max-width: 620px;
-      margin: 0 auto 18px;
-      color: #dbe7f4;
-      line-height: 1.7;
-    }
-
-    .giving-contact .giving-button {
-      display: inline-block;
-      width: auto;
-      padding: 12px 24px;
-      background: white;
-      color: var(--giving-dark);
-    }
-
-    @media (max-width: 900px) {
-      .giving-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .giving-card:last-child {
-        grid-column: 1 / -1;
-      }
-
-      .giving-card:last-child .giving-photo {
-        height: 260px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .giving-page {
-        width: 94%;
-      }
-
-      .giving-hero {
-        padding: 54px 20px;
-        margin-top: 20px;
-      }
-
-      .giving-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .giving-card:last-child {
-        grid-column: auto;
-      }
-
-      .giving-card:last-child .giving-photo,
-      .giving-photo {
-        height: 220px;
-      }
-
-      .giving-card-content {
-        padding: 22px;
-      }
-
-      .giving-note {
-        padding: 24px 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .giving-card,
-      .giving-photo img {
-        transition: none;
-      }
-    }
   </style>
 
 </head>
@@ -332,11 +33,10 @@
 
             <div class="nav-links" id="navLinks">
                 <a href="index.html#about">About</a>
-                <a href="index.html#visit">Visit</a>
                 <a href="events.html">Calendar</a>
-                <a href="index.html#groups">Groups</a>
+                <a href="groups.html">Groups</a>
                 <a href=#>Giving</a>
-                <a href="index.html#visit" class="nav-cta">Contact</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
             </div>
 
             <button
@@ -391,13 +91,11 @@
           </p>
 
           <div class="giving-scripture">
-            <strong>BWMC</strong>
-            Banking details go here
+            <strong>BSB</strong> 033-003
+            <strong>Account No.</strong> 322655
+            <strong>Name</strong> Balwyn Wesleyan Methodist Church
           </div>
 
-          <a class="giving-button" href="index.html#contact">
-            How to Give
-          </a>
         </div>
       </article>
 
@@ -416,16 +114,18 @@
           <p>
             Mission giving helps support ministry partners, share the
             Gospel and provide practical care for people and communities
-            both locally and around the world.
+            around the world.
           </p>
 
           <div class="giving-scripture">
-            <strong>ELIM</strong>
-            Banking details go here
+            <em>For tax deductible giving to missions</em>:
+            <strong>BSB</strong> 013-606
+            <strong>Account No.</strong> 306 540 579
+            <strong>Name</strong> ELIM Foundation
           </div>
 
-          <a class="giving-button" href="index.html#contact">
-            Support Missions
+          <a class="giving-button" href="mailto:info@elimfoundation.com">
+            After you have given, please email your name and address
           </a>
         </div>
       </article>
@@ -449,13 +149,12 @@
           </p>
 
           <div class="giving-scripture">
-            <strong>Building Fund</strong>
-            Banking details go here
+            <strong>BSB</strong> 033-003
+            <strong>Account No.</strong> 322655
+            <strong>Name</strong> Balwyn Wesleyan Methodist Church
+            <strong>Reference</strong> Please add "Building Fund" in the reference field
           </div>
-
-          <a class="giving-button" href="index.html#contact">
-            Give to the Building Fund
-          </a>
+          
         </div>
       </article>
 
@@ -478,7 +177,7 @@
                         our team will be happy to help.
                     </p>
 
-                    <a href="index.html#connect"
+                    <a href="mailto:office@bwmc.org.au"
                        class="button button-dark">
                         Get in Touch →
                     </a>
