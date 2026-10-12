@@ -11,417 +11,6 @@
     <!-- Reuse the existing BWMC stylesheet -->
     <link rel="stylesheet" href="style_bwmc.css">
 
-    <style>
-        /* Event-page-specific styles only */
-
-        .events-hero {
-            padding: 180px 0 85px;
-            background: var(--black);
-            color: white;
-        }
-
-        .events-hero h1 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            line-height: .9;
-            letter-spacing: -.02em;
-            margin: 18px 0 25px;
-        }
-
-        .events-hero p {
-            max-width: 600px;
-            color: #bbb;
-            font-size: 1.1rem;
-        }
-
-        .events-main {
-            padding: 75px 0 120px;
-        }
-
-        .events-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .events-heading h2 {
-            font-size: clamp(2.3rem, 5vw, 4rem);
-            letter-spacing: -.06em;
-            line-height: 1;
-            margin-top: 12px;
-        }
-
-        .calendar-panel {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 30px;
-            margin-bottom: 75px;
-        }
-
-        .calendar-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .calendar-top h3 {
-            font-size: 1.6rem;
-            letter-spacing: -.04em;
-        }
-
-        .calendar-controls {
-            display: flex;
-            gap: 8px;
-        }
-
-        .calendar-controls button {
-            border: 1px solid var(--border);
-            background: var(--cream);
-            border-radius: 50%;
-            width: 42px;
-            height: 42px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .calendar-controls button:hover {
-            background: var(--accent-light);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, minmax(0, 1fr));
-            gap: 8px;
-        }
-
-        .weekday {
-            text-align: center;
-            font-size: .75rem;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-            font-weight: 800;
-            color: var(--muted);
-            padding: 10px 0;
-        }
-
-        .calendar-day {
-            min-height: 90px;
-            padding: 10px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            background: #fff;
-            text-align: left;
-            cursor: pointer;
-            color: var(--black);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .calendar-day:hover {
-            border-color: var(--accent);
-            background: #f5f9ff;
-        }
-
-        .calendar-day.outside {
-            color: #aaa;
-            background: #fafafa;
-        }
-
-        .calendar-day.today {
-            border: 2px solid var(--accent);
-        }
-
-        .calendar-day.selected {
-            background: var(--accent-light);
-            border-color: var(--accent);
-        }
-
-        .day-number {
-            font-weight: 800;
-            font-size: .9rem;
-        }
-
-        .day-event-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .day-event-label {
-            font-size: .68rem;
-            line-height: 1.25;
-            color: var(--accent-dark);
-            font-weight: 750;
-            overflow-wrap: anywhere;
-        }
-
-        .calendar-note {
-            margin-top: 18px;
-            font-size: .88rem;
-            color: var(--muted);
-        }
-
-        .event-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .filter-button {
-            border: 1px solid var(--border);
-            background: white;
-            color: var(--black);
-            border-radius: 100px;
-            padding: 10px 18px;
-            font-weight: 750;
-            font-size: .85rem;
-            cursor: pointer;
-        }
-
-        .filter-button:hover,
-        .filter-button.active {
-            background: var(--black);
-            color: white;
-        }
-
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .event-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .event-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 40px rgba(0,0,0,.07);
-        }
-
-        .event-image {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            background: var(--accent-light);
-        }
-
-        .event-card-body {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .event-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 15px;
-            color: var(--muted);
-            font-size: .78rem;
-            font-weight: 700;
-        }
-
-        .event-category {
-            display: inline-block;
-            background: var(--accent-light);
-            color: var(--accent-dark);
-            border-radius: 100px;
-            padding: 5px 10px;
-        }
-
-        .event-card h3 {
-            font-size: 1.65rem;
-            line-height: 1.05;
-            letter-spacing: -.045em;
-            margin-bottom: 12px;
-        }
-
-        .event-card p {
-            color: var(--muted);
-            font-size: .92rem;
-            margin-bottom: 22px;
-        }
-
-        .event-link {
-            margin-top: auto;
-            font-weight: 850;
-            color: var(--accent-dark);
-            font-size: .88rem;
-            align-self: flex-start;
-            border: 0;
-            background: transparent;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .empty-events {
-            grid-column: 1 / -1;
-            padding: 45px 25px;
-            border: 1px dashed var(--border);
-            border-radius: var(--radius);
-            text-align: center;
-            color: var(--muted);
-        }
-
-        .event-details {
-            margin-top: 35px;
-            padding: 30px;
-            background: var(--accent-light);
-            border-radius: var(--radius);
-            display: none;
-        }
-
-        .event-details.visible {
-            display: block;
-        }
-
-        .event-details h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
-        .event-details p {
-            margin-bottom: 10px;
-        }
-
-        .event-details button {
-            margin-top: 15px;
-            border: 0;
-            background: var(--black);
-            color: white;
-            border-radius: 100px;
-            padding: 11px 18px;
-            cursor: pointer;
-        }
-
-        .events-contact {
-            margin-top: 75px;
-            padding: 55px;
-            background: var(--accent);
-            border-radius: var(--radius);
-            color: white;
-        }
-
-        .events-contact h2 {
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            line-height: .95;
-            letter-spacing: -.02em;
-            margin-bottom: 18px;
-        }
-
-        .events-contact p {
-            max-width: 550px;
-            margin-bottom: 25px;
-        }
-
-        .events-contact .button-dark {
-            background: white;
-            color: var(--black);
-        }
-
-        @media (max-width: 900px) {
-            .event-list {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .calendar-day {
-                min-height: 75px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .events-hero {
-                padding: 145px 0 65px;
-            }
-
-            .events-main {
-                padding: 50px 0 80px;
-            }
-
-            .events-heading {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .calendar-panel {
-                padding: 15px;
-                margin-bottom: 55px;
-            }
-
-            .calendar-top h3 {
-                font-size: 1.25rem;
-            }
-
-            .calendar-grid {
-                gap: 3px;
-            }
-
-            .weekday {
-                font-size: .62rem;
-                letter-spacing: 0;
-            }
-
-            .calendar-day {
-                min-height: 49px;
-                padding: 5px;
-                border-radius: 7px;
-                gap: 3px;
-            }
-
-            .day-number {
-                font-size: .78rem;
-            }
-
-            .day-event-label {
-                display: none;
-            }
-
-            .day-event-dot {
-                width: 6px;
-                height: 6px;
-            }
-
-            .event-list {
-                grid-template-columns: 1fr;
-            }
-
-            .event-image {
-                height: 230px;
-            }
-
-            .events-contact {
-                padding: 35px 25px;
-                margin-top: 55px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *, *::before, *::after {
-                transition-duration: .01ms !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -431,19 +20,18 @@
     <div class="nav-wrapper">
         <nav class="navbar" id="navbar">
 
-            <a href="index.html#home" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-mark">B</span>
                 BWMC
             </a>
 
             <div class="nav-links" id="navLinks">
                 <a href="index.html#about">About</a>
-                <a href="index.html#ministries">Ministries</a>
-                <a href="index.html#sermons">Sermons</a>
-                <a href="events.html" aria-current="page">Events</a>
-                <a href="index.html#connect">Connect</a>
-                <a href="index.html#give">Give</a>
-                <a href="index.html#visit" class="nav-cta">Plan a Visit</a>
+                <a href="index.html#visit">Visit</a>
+                <a href=#>Calendar</a>
+                <a href="index.html#groups">Groups</a>
+                <a href="giving.html">Giving</a>
+                <a href="index.html#visit" class="nav-cta">Contact</a>
             </div>
 
             <button
@@ -457,7 +45,6 @@
         </nav>
     </div>
 
-
     <main>
 
         <!-- PAGE INTRO -->
@@ -465,12 +52,12 @@
         <section class="events-hero">
             <div class="container">
 
-                <div class="eyebrow">Life at BWMC</div>
+                <div class="eyebrow">What's going on at BWMC?</div>
 
                 <h1>Church Calendar</h1>
 
                 <p>
-                    From Sunday gatherings to community events,
+                    From Sunday services to community events,
                     youth nights and special celebrations,
                     there's a place for you at BWMC.
                 </p>
@@ -522,455 +109,176 @@
     <!-- FOOTER -->
 
     <footer id="give">
+
         <div class="container">
 
             <div class="footer-top">
 
                 <div>
-                    <a href="index.html" class="footer-logo">BWMC</a>
+
+                    <div class="footer-logo">
+                        BWMC
+                    </div>
 
                     <p class="footer-intro">
-                        A church community following Jesus,
-                        serving people, and living with purpose.
+                        Balwyn Wesleyan Methodist Church<br>
+                        184 Balwyn Rd, Balwyn VIC 3103
                     </p>
+
                 </div>
 
+
                 <div class="footer-column">
+
                     <h4>Explore</h4>
-                    <a href="index.html#about">About</a>
-                    <a href="index.html#ministries">Ministries</a>
-                    <a href="index.html#sermons">Sermons</a>
-                    <a href="events.html">Events</a>
+
+                    <a href="#about">About</a>
+                    <a href="#ministries">Ministries</a>
+                    <a href="#sermons">Sermons</a>
+                    <a href="#events">Events</a>
+
                 </div>
 
+
                 <div class="footer-column">
+
                     <h4>Connect</h4>
-                    <a href="index.html#visit">Plan a Visit</a>
-                    <a href="index.html#connect">Contact</a>
-                    <a href="index.html#connect">Prayer</a>
-                    <a href="index.html#ministries">Groups</a>
+
+                    <a href="#visit">Plan a Visit</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Prayer</a>
+                    <a href="#">Groups</a>
+
                 </div>
 
+
                 <div class="footer-column">
+
                     <h4>More</h4>
-                    <a href="index.html#give">Give</a>
+
+                    <a href="#give">Give</a>
                     <a href="#">Leadership</a>
                     <a href="#">Privacy</a>
                     <a href="#">Facebook</a>
                     <a href="#">Instagram</a>
+
                 </div>
 
             </div>
 
+
             <div class="footer-bottom">
+
                 <span>
                     © <span id="year"></span> BWMC.
                     All rights reserved.
                 </span>
-                <span>Made with purpose.</span>
+
+                <span>
+                    Made with purpose.
+                </span>
+
             </div>
 
         </div>
+
     </footer>
 
 
     <script>
-        // Replace these examples with actual BWMC events.
-        // Dates use YYYY-MM-DD format and local church times.
 
-        const events = [
-            {
-                id: 1,
-                title: "Sunday Worship",
-                date: "2026-10-18",
-                time: "9:00 AM & 10:45 AM",
-                location: "Main Church",
-                category: "Church",
-                description: "Join us for worship, teaching and fellowship. Everyone is welcome.",
-                image: "https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=900&q=80"
-            },
-            {
-                id: 2,
-                title: "Community Lunch",
-                date: "2026-10-24",
-                time: "12:00 PM",
-                location: "Church Hall",
-                category: "Community",
-                description: "Share a meal, meet new people and enjoy time together as a church family.",
-                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80"
-            },
-            {
-                id: 3,
-                title: "Youth Night",
-                date: "2026-10-30",
-                time: "7:00 PM",
-                location: "Youth Room",
-                category: "Youth",
-                description: "An evening of friendship, games, discussion and growing in faith.",
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
-            },
-            {
-                id: 4,
-                title: "Kids Club",
-                date: "2026-11-07",
-                time: "10:00 AM",
-                location: "Church Hall",
-                category: "Kids",
-                description: "A fun morning for kids with activities, friendship and Bible stories.",
-                image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80"
-            },
-            {
-                id: 5,
-                title: "Prayer Gathering",
-                date: "2026-11-11",
-                time: "7:30 PM",
-                location: "Main Church",
-                category: "Church",
-                description: "Come together to pray for our church, our community and those in need.",
-                image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80"
-            },
-            {
-                id: 6,
-                title: "Community Picnic",
-                date: "2026-11-21",
-                time: "11:30 AM",
-                location: "Local Park",
-                category: "Community",
-                description: "Bring the family and enjoy an informal afternoon together outdoors.",
-                image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"
-            }
-        ];
+        const menuButton =
+            document.getElementById("menuButton");
 
-        const calendarGrid = document.getElementById("calendarGrid");
-        const monthTitle = document.getElementById("monthTitle");
-        const eventList = document.getElementById("eventList");
-        const eventListTitle = document.getElementById("eventListTitle");
-        const eventDetails = document.getElementById("eventDetails");
+        const navLinks =
+            document.getElementById("navLinks");
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
 
-        let displayedMonth = new Date(
-            today.getFullYear(),
-            today.getMonth(),
-            1
-        );
-
-        let selectedDate = null;
-        let activeCategory = "All";
-
-        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-        function parseDate(dateString) {
-            const [year, month, day] = dateString.split("-").map(Number);
-            return new Date(year, month - 1, day);
-        }
-
-        function dateKey(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, "0");
-            const day = String(date.getDate()).padStart(2, "0");
-
-            return `${year}-${month}-${day}`;
-        }
-
-        function formatDate(dateString) {
-            return parseDate(dateString).toLocaleDateString("en-AU", {
-                weekday: "long",
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-            });
-        }
-
-        function renderCalendar() {
-            calendarGrid.replaceChildren();
-
-            monthTitle.textContent = displayedMonth.toLocaleDateString(
-                "en-AU",
-                { month: "long", year: "numeric" }
-            );
-
-            weekdays.forEach(day => {
-                const heading = document.createElement("div");
-                heading.className = "weekday";
-                heading.textContent = day;
-                calendarGrid.appendChild(heading);
-            });
-
-            const firstDay = new Date(
-                displayedMonth.getFullYear(),
-                displayedMonth.getMonth(),
-                1
-            );
-
-            const startDate = new Date(
-                firstDay.getFullYear(),
-                firstDay.getMonth(),
-                1 - firstDay.getDay()
-            );
-
-            for (let i = 0; i < 42; i++) {
-                const date = new Date(startDate);
-                date.setDate(startDate.getDate() + i);
-
-                const key = dateKey(date);
-                const dayEvents = events.filter(event => event.date === key);
-
-                const button = document.createElement("button");
-                button.type = "button";
-                button.className = "calendar-day";
-
-                if (date.getMonth() !== displayedMonth.getMonth()) {
-                    button.classList.add("outside");
-                }
-
-                if (key === dateKey(today)) {
-                    button.classList.add("today");
-                }
-
-                if (key === selectedDate) {
-                    button.classList.add("selected");
-                }
-
-                button.setAttribute(
-                    "aria-label",
-                    `${formatDate(key)}${dayEvents.length
-                        ? `, ${dayEvents.length} event(s)`
-                        : ""}`
-                );
-
-                const number = document.createElement("span");
-                number.className = "day-number";
-                number.textContent = date.getDate();
-                button.appendChild(number);
-
-                if (dayEvents.length) {
-                    const dot = document.createElement("span");
-                    dot.className = "day-event-dot";
-                    dot.setAttribute("aria-hidden", "true");
-                    button.appendChild(dot);
-
-                    const label = document.createElement("span");
-                    label.className = "day-event-label";
-                    label.textContent = dayEvents.length === 1
-                        ? dayEvents[0].title
-                        : `${dayEvents.length} events`;
-
-                    button.appendChild(label);
-                }
-
-                button.addEventListener("click", () => {
-                    selectedDate = key;
-
-                    // Move the calendar to the clicked date's month.
-                    displayedMonth = new Date(
-                        date.getFullYear(),
-                        date.getMonth(),
-                        1
-                    );
-
-                    renderCalendar();
-                    renderEvents();
-                });
-
-                calendarGrid.appendChild(button);
-            }
-        }
-
-        function renderEvents() {
-            eventList.replaceChildren();
-            eventDetails.classList.remove("visible");
-            eventDetails.replaceChildren();
-
-            let visibleEvents = [...events]
-                .filter(event => parseDate(event.date) >= today)
-                .sort((a, b) => a.date.localeCompare(b.date));
-
-            if (selectedDate) {
-                visibleEvents = visibleEvents.filter(
-                    event => event.date === selectedDate
-                );
-
-                eventListTitle.textContent =
-                    `Events — ${formatDate(selectedDate)}`;
-            } else {
-                eventListTitle.textContent = "Upcoming Events";
-            }
-
-            if (activeCategory !== "All") {
-                visibleEvents = visibleEvents.filter(
-                    event => event.category === activeCategory
-                );
-            }
-
-            if (visibleEvents.length === 0) {
-                const empty = document.createElement("div");
-                empty.className = "empty-events";
-                empty.textContent =
-                    "No events found for this selection. Try another date or category.";
-
-                eventList.appendChild(empty);
-                return;
-            }
-
-            visibleEvents.forEach(event => {
-                const card = document.createElement("article");
-                card.className = "event-card";
-
-                const img = document.createElement("img");
-                img.className = "event-image";
-                img.src = event.image;
-                img.alt = "";
-                img.loading = "lazy";
-
-                const body = document.createElement("div");
-                body.className = "event-card-body";
-
-                const meta = document.createElement("div");
-                meta.className = "event-meta";
-
-                const category = document.createElement("span");
-                category.className = "event-category";
-                category.textContent = event.category;
-
-                const date = document.createElement("span");
-                date.textContent = formatDate(event.date);
-
-                meta.append(category, date);
-
-                const title = document.createElement("h3");
-                title.textContent = event.title;
-
-                const description = document.createElement("p");
-                description.textContent = event.description;
-
-                const time = document.createElement("p");
-                time.textContent = `${event.time} · ${event.location}`;
-
-                const link = document.createElement("button");
-                link.className = "event-link";
-                link.type = "button";
-                link.textContent = "Event Details →";
-
-                link.addEventListener("click", () => {
-                    showEventDetails(event);
-                });
-
-                body.append(meta, title, description, time, link);
-                card.append(img, body);
-                eventList.appendChild(card);
-            });
-        }
-
-        function showEventDetails(event) {
-            eventDetails.replaceChildren();
-            eventDetails.classList.add("visible");
-
-            const title = document.createElement("h3");
-            title.textContent = event.title;
-
-            const date = document.createElement("p");
-            date.textContent = formatDate(event.date);
-
-            const time = document.createElement("p");
-            time.textContent = `Time: ${event.time}`;
-
-            const location = document.createElement("p");
-            location.textContent = `Location: ${event.location}`;
-
-            const description = document.createElement("p");
-            description.textContent = event.description;
-
-            const close = document.createElement("button");
-            close.type = "button";
-            close.textContent = "Close Details";
-            close.addEventListener("click", () => {
-                eventDetails.classList.remove("visible");
-            });
-
-            eventDetails.append(
-                title, date, time, location, description, close
-            );
-
-            eventDetails.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-        }
-
-        document.getElementById("prevMonth").addEventListener("click", () => {
-            displayedMonth = new Date(
-                displayedMonth.getFullYear(),
-                displayedMonth.getMonth() - 1,
-                1
-            );
-
-            selectedDate = null;
-            renderCalendar();
-            renderEvents();
-        });
-
-        document.getElementById("nextMonth").addEventListener("click", () => {
-            displayedMonth = new Date(
-                displayedMonth.getFullYear(),
-                displayedMonth.getMonth() + 1,
-                1
-            );
-
-            selectedDate = null;
-            renderCalendar();
-            renderEvents();
-        });
-
-        document.querySelectorAll(".filter-button").forEach(button => {
-            button.addEventListener("click", () => {
-                activeCategory = button.dataset.category;
-
-                document.querySelectorAll(".filter-button").forEach(item => {
-                    const active = item === button;
-                    item.classList.toggle("active", active);
-                    item.setAttribute("aria-pressed", active);
-                });
-
-                renderEvents();
-            });
-        });
-
-        // Mobile navigation
-        const menuButton = document.getElementById("menuButton");
-        const navLinks = document.getElementById("navLinks");
-        const navbar = document.getElementById("navbar");
+        /* Mobile navigation */
 
         menuButton.addEventListener("click", () => {
-            const isOpen = navLinks.classList.toggle("open");
 
-            menuButton.setAttribute("aria-expanded", isOpen);
+            const isOpen =
+                navLinks.classList.toggle("open");
+
             menuButton.setAttribute(
-                "aria-label",
-                isOpen ? "Close menu" : "Open menu"
+                "aria-expanded",
+                isOpen
             );
-            menuButton.textContent = isOpen ? "×" : "☰";
+
+            menuButton.textContent =
+                isOpen ? "×" : "☰";
         });
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("open");
-                menuButton.setAttribute("aria-expanded", "false");
-                menuButton.setAttribute("aria-label", "Open menu");
-                menuButton.textContent = "☰";
+
+        /* Close mobile menu when a link is clicked */
+
+        document.querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("open");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.textContent = "☰";
+
+                });
+
             });
-        });
+
+
+        /* Navbar shadow while scrolling */
+
+        const navbar =
+            document.getElementById("navbar");
 
         window.addEventListener("scroll", () => {
-            navbar.classList.toggle("scrolled", window.scrollY > 20);
+
+            if (window.scrollY > 20) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
         });
 
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
 
-        renderCalendar();
-        renderEvents();
+        /* Current year */
+
+        document.getElementById("year")
+            .textContent = new Date().getFullYear();
+
+
+        /* Smooth scrolling */
+
+        document.querySelectorAll('a[href^="#"]')
+            .forEach(anchor => {
+
+                anchor.addEventListener("click", function (event) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+                    if (!target) return;
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                });
+
+            });
+
     </script>
 
 </body>
