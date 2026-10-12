@@ -1616,3 +1616,76 @@ footer {
                 transition-duration: .01ms !important;
             }
         }
+
+
+/* ABOUT PAGE HERO */
+.about-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background: #c3c8cd;
+    color: #24364a;
+}
+
+/* Soft church-logo watermark */
+.about-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: clamp(220px, 32vw, 420px);
+    aspect-ratio: 1;
+
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: url("bwmc_logo_cross.png") center / contain no-repeat;
+    opacity: 0.30;
+
+    pointer-events: none;
+}
+
+/* Keep the heading and paragraph readable */
+.about-hero h1,
+.about-hero p {
+    color: #24364a;
+}
+
+@media (max-width: 600px) {
+    .about-hero::before {
+        width: 220px;
+        right: -20px;
+        top: 55%;
+        opacity: 0.20;
+    }
+}
+
+/* Intro section logo watermark */
+.intro-logo-bg {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.intro-logo-bg::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background: url("bwmc_logo_cross.png") no-repeat;
+    background-position: 15% center;
+    background-size: clamp(220px, 30vw, 400px);
+
+    opacity: 0.30;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .intro-logo-bg::before {
+        background-position: 70% center;
+        opacity: 0.15;
+    }
+}
